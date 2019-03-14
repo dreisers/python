@@ -26,8 +26,8 @@ pyplot.bar(x, busan, label="부산", width=0.4, color="#fc3000")
 
 """
 # 2)
-pyplot.bar(x-0.1, seoul, label="서울", width=0.4, color="#ff6600")
-pyplot.bar(x+0.1, busan, label="부산", width=0.4, color="#fc3000")
+pyplot.bar(x-0.25, seoul, label="서울", width=0.4, color="#ff6600")
+pyplot.bar(x+0.25, busan, label="부산", width=0.4, color="#fc3000")
 
 pyplot.xticks(x, label)
 pyplot.legend()

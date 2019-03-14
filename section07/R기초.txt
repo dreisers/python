@@ -1,0 +1,50 @@
+R을 활용한 기초통계
+# 주석
+<- 대입연산자
+
+score <- c(85, 90, 93, 86, 82)
+mean(score)	# 평균
+median(score)	# 중앙값
+var(score)		# 분산
+sd(score)		# 표준편차
+
+예제) 데이터의 분포 (히스토그램)
+- 대상 : 국민 100만명
+- 평균키 : 168
+- 표준편차 : 7
+
+height <- rnorm(n=1000000, mean=168, sd=7)
+hist(height, breaks=10, probability=T)
+
+hist(height, breaks=30, probability=T)
+lines(density(height, bw=0.5), col="red", lwd=1)
+savePlot("hist.png", type="png")
+
+score1 <- read.csv("csv_exam.csv", header=T)
+score1
+
+[선형회귀분석]
+-> 어떤 결과값을 기준으로 다른 결과값을 예측하는 방법
+
+예제) 부모의 IQ가 117일때 자녀의 IQ가 얼마나 될지 예측 
+부모의 IQ(x) : 110, 120, 130, 140, 150
+자녀의 IQ(y) : 100, 105, 128, 115, 142
+
+x <- c(110, 120, 130, 140, 150)
+y <- c(100, 105, 128, 115, 142)
+plot(x, y, pch=20, col="red")
+
+line <- lm(y~x)
+abline(line, col="blue")
+
+[상관분석]
+예제) 어떤 회사에서 신제품이 나왔을때 안내메일(DM)을 발송하는 횟수와
+제품이 판매되는 것 사이에 어떤 관계가 있는지 조사
+
+* 제품 판매 개수(x) : 3, 5, 8, 11, 13
+* DM 발송횟수(y) : 1, 2, 3, 4, 5
+x <- c(3, 5, 8, 11, 13)
+y <- c(1, 2, 3, 4, 5)
+cor(x, y) #상관계수
+
+# 상관계수에 따른 해석(인터넷 검색하면 나옴)

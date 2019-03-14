@@ -29,5 +29,6 @@ pyplot.xlabel('교통사고 수')
 pyplot.xlim(0, 4000)
 pyplot.title('2017년 서울, 부산 교통사고 현황')
 
+
 pyplot.show()
 pyplot.close()
